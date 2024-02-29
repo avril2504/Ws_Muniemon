@@ -12,28 +12,45 @@ public class aplicacionMuniemon {
 		
 	}
 	public static void menu(Scanner sc) {
-		Muniemon muniemon = null;
+		Muniemon muniemon1 = null;
+		Muniemon muniemon2 = null;
 		int opcion = 0;
 		do {	
 		System.out.println("----------menú----------");
-		System.out.println("1. Dar de alta Muniemon");
-		System.out.println("2. Mostrar Muniemon");
-		System.out.println("3. Salir del programa");
+		System.out.println("1. Dar de alta primer Muniemon");
+		System.out.println("2. Dar de alta segundo Muniemon");
+		System.out.println("3. Mostrar primer Muniemon");
+		System.out.println("4. Mostrar segundo Muniemon");
+		System.out.println("5. Atacar primer Muniemon a segundo Muniemon");
+		System.out.println("6. Atacar segundo Muniemon a primer Muniemon");
+		System.out.println("7. Salir del programa");
 		opcion = sc.nextInt();
 		switch(opcion) {
 		case 1:
-			muniemon = altaMuniemon(sc);
+			muniemon1 = altaMuniemon(sc);
 			break;
 		case 2:
-			mostrarMuniemon(muniemon);
+			muniemon2 = altaMuniemon(sc);
 			break;
 		case 3:
+			mostrarMuniemon(muniemon1);
+			break;
+		case 4:
+			mostrarMuniemon(muniemon2);
+			break;
+		case 5:
+			muniemon1.atacar(muniemon2);
+			break;
+		case 6:
+			muniemon2.atacar(muniemon1);
+			break;
+		case 7:
 			System.out.println("saliste del programa");
 			break;
 		default:
 			System.out.println("opción no valida");
 		   }	
-		}while(opcion != 3);
+		}while(opcion != 7);
 		sc.close();
 	}
 	
@@ -46,6 +63,8 @@ public class aplicacionMuniemon {
 			int vida = sc.nextInt();
 			System.out.println("introduzca la defensa de su Muniemon");
 			int defensa = sc.nextInt();
+			System.out.println("Introduzca el ataque");
+			int ataque = sc.nextInt();
 			System.out.println("introduca el tipo de Muniemon");
 			for(int i = 0; i < Tipo.values().length; i ++) {
 				System.out.println(i+ "." + Tipo.values()[i]);
