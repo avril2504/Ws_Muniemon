@@ -6,17 +6,19 @@ public class Muniemon {
 	private int defensa;
 	private Tipo tipo;
 	private int ataque;
+	private int velocidad;
 
 	public Muniemon() {
 		super();
 	}
 
-	public Muniemon(String nombre, int vida, int defensa, Tipo tipo) {
+	public Muniemon(String nombre, int vida, int defensa, Tipo tipo, int velocidad) {
 		super();
 		this.nombre = nombre;
 		this.vida = vida;
 		this.defensa = defensa;
 		this.tipo = tipo;
+		this.velocidad = velocidad;
 	}
 
 	public String getNombre() {
@@ -58,18 +60,28 @@ public class Muniemon {
 	public void setAtaque(int ataque) {
 		this.ataque = ataque;
 	}
+	public int getVelocidad() {
+		return velocidad;
+	}
+
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
+	}
 
 	public void atacar(Muniemon muniemon) {
-		System.out.println(this.getNombre() + "ataca a" + muniemon.nombre);
+		System.out.println(this.getNombre() + " ataca a " + muniemon.nombre);
+		
 		if (muniemon.vida <= 0) {
 			System.out.println("No se puede atacar al muniemon porque esta muerto");
 		} else {
 			int vidaFinal = 0;
 			int danio = this.getAtaque() - muniemon.defensa;
+			
 			if (danio > 0) {
 				System.out.println(muniemon.nombre + "ha sido atacado, el daño es de: " + danio);
 				vidaFinal = muniemon.vida - danio;
 				muniemon.vida = vidaFinal;
+				
 				if (muniemon.vida < 0) {
 					System.out.println(muniemon.nombre + "fue derrotado");
 				} else {
@@ -80,4 +92,5 @@ public class Muniemon {
 		}
 
 	}
+
 }
