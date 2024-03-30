@@ -75,7 +75,7 @@ public class aplicacionMuniemon {
 			int seleccion = sc.nextInt();
 			Tipo tipo = Tipo.values()[seleccion];
 			System.out.println("El tipo del Muniemon es: " + tipo);
-			Muniemon muniemon = new Muniemon(nombre, vida, defensa, tipo, velocidad);
+			Muniemon muniemon = new Muniemon(nombre, vida, defensa, tipo, velocidad, ataque);
 			return muniemon;
 		   }
 
@@ -85,6 +85,7 @@ public class aplicacionMuniemon {
 	            System.out.println("Nombre: " + muniemon.getNombre());
 	            System.out.println("Vida: " + muniemon.getVida());
 	            System.out.println("Defensa: " + muniemon.getDefensa());
+	            System.out.println("Ataque: " + muniemon.getAtaque());
 	            System.out.println("Tipo: " + muniemon.getTipo());
 	            System.out.println();
 	        } else {
