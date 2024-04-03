@@ -82,7 +82,6 @@ public class Muniemon {
 	                return 1.0;
 	        }
 	    }
-
 	    public void atacar(Muniemon muniemon) {
 	        System.out.println(this.getNombre() + " ataca a " + muniemon.getNombre());
 	        
@@ -90,7 +89,7 @@ public class Muniemon {
 	            System.out.println("No se puede atacar al muniemon porque está muerto");
 	        } else {
 	            // Obtener el multiplicador de daño basado en los tipos
-	            double multiplicador = this.obtenerMultiplicador(muniemon.getTipo());
+	            double multiplicador = obtenerMultiplicador(getTipo());
 	            
 	            // Calcular el daño basado en el ataque y el multiplicador
 	            int danio = (int) (this.getAtaque() * multiplicador) - muniemon.getDefensa();
@@ -105,8 +104,7 @@ public class Muniemon {
 	                } else {
 	                    System.out.println("La vida de " + muniemon.getNombre() + " es: " + muniemon.getVida());
 	                }
-	            } else {
-	                System.out.println("El ataque de " + this.getNombre() + " no inflige daño a " + muniemon.getNombre());
+
 	            }
 	        }
 	    }

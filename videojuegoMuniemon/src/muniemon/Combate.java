@@ -53,7 +53,8 @@ public class Combate {
 	        }
 	    }
 	    
-	    if (primerAtacante.getVida() > 0) {
+
+	   if (primerAtacante.getVida() > 0) {
 	        System.out.println("El ganador es: " + primerAtacante.getNombre());
 	        return primerAtacante;
 	    } else {
